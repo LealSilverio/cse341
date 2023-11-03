@@ -1,10 +1,10 @@
 
 const buildIndex = (req, res) => {
-    res.send('Hello World');
+    res.send('Morgan Burbank');
 };
 
-const buildNamePage = (req, res) => {
+const buildMyNamePage = (req, res) => {
     res.send('Sara Leal Silverio');
 };
 
-module.exports = { buildIndex, buildNamePage }
+module.exports = { buildIndex, buildMyNamePage }
