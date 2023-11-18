@@ -1,47 +1,101 @@
-### GET all users
-GET http://localhost:8080/users
+### GET all 
+GET http://localhost:8080/
 Content-Type: application/json
 
-### GET user from id
-GET http://localhost:8080/users/6546a227671d651aa3c3b91b
+### GET recipe from id
+GET http://localhost:8080//655916253115759c4d64a15e
 Content-Type: application/json
 
-### Add user
-POST http://localhost:8080/users HTTP/1.1
-Content-Type: application/json
-
-{
-	"firstName": "Sara",
-	"lastName": "Silverio",
-	"email": "myname@example.com",
-	"favoriteColor": "Purple",
-	"birthday": "02/29/2020"
-}
-
-### PUT (Update) user using id
-PUT http://localhost:8080/users HTTP/1.1
+### Add recipe
+POST http://localhost:8080/ HTTP/1.1
 Content-Type: application/json
 
 {
-	"firstName": "Seth",
-	"lastName": "Noyes",
-	"email": "name@example.com",
-	"favoriteColor": "White",
-	"birthday": "09/02/1995"
+    "name": "Egg in Toast",
+    "ingredients": [
+		"Bread",
+		"Egg",
+		"Butter/Oil",
+		"Salt and Pepper"
+    ],
+    "ingredientQuantity": [
+		"1",
+		"1",
+		"1 tsp",
+		""
+    ],
+    "cookTime": "5min",
+    "prepTime": "0",
+    "averagePrice": "$",
+    "steps": [
+		"Cut a hole in the bread",
+		"Heat the pan on medium heat then add butter/oil in pan",
+		"Toast bread in pan and crack egg in hole",
+		"Once egg is firm and bread toasted, flip bread and egg",
+		"Add salt and pepper to taste"
+    ]
 }
 
-### PATCH (Update) user using id
-PATCH http://localhost:8080/users HTTP/1.1
+### PUT (Update) recipe using id
+PUT http://localhost:8080/ HTTP/1.1
 Content-Type: application/json
 
 {
-	"firstName": "Seth",
-	"lastName": "Noyes",
-	"email": "name@example.com",
-	"favoriteColor": "White",
-	"birthday": "09/02/1995"
+    "name": "Egg in Toast",
+    "ingredients": [
+		"Bread",
+		"Egg",
+		"Butter/Oil",
+		"Salt and Pepper"
+    ],
+    "ingredientQuantity": [
+		"1",
+		"1",
+		"1 tsp",
+		""
+    ],
+    "cookTime": "5min",
+    "prepTime": "0",
+    "averagePrice": "$",
+    "steps": [
+		"Cut a hole in the bread",
+		"Heat the pan on medium heat then add butter/oil in pan",
+		"Toast bread in pan and crack egg in hole",
+		"Once egg is firm and bread toasted, flip bread and egg",
+		"Add salt and pepper to taste"
+    ]
 }
 
-### DELETE user from id
-DELETE http://localhost:8080/users HTTP/1.1
+### PATCH (Update) recipe using id
+PATCH http://localhost:8080/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Egg in Toast",
+    "ingredients": [
+		"Bread",
+		"Egg",
+		"Butter/Oil",
+		"Salt and Pepper"
+    ],
+    "ingredientQuantity": [
+		"1",
+		"1",
+		"1 tsp",
+		""
+    ],
+    "cookTime": "5min",
+    "prepTime": "0",
+    "averagePrice": "$",
+    "steps": [
+		"Cut a hole in the bread",
+		"Heat the pan on medium heat then add butter/oil in pan",
+		"Toast bread in pan and crack egg in hole",
+		"Once egg is firm and bread toasted, flip bread and egg",
+		"Add salt and pepper to taste"
+    ]
+}
+
+### DELETE recipe from id
+DELETE http://localhost:8080/ HTTP/1.1
 Content-Type: application/json
