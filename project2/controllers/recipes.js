@@ -3,17 +3,17 @@ const ObjectId = require('mongodb').ObjectId;
 const repController = {}  
 
 repController.getAll = async (req, res) => {
-    const result = await mongodb.getDb().db('Project2').collection('recipes').find();
-    result.toArray().then((recipes) => {
+    const result = await mongodb.getDb().db('Recipes').collection('Recipes').find();
+    result.toArray().then((Recipes) => {
         res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(recipes);
+        res.status(200).json(Recipes);
     });
 };
 
 repController.getSingle = async (req, res) => {
     const recipeId = new ObjectId(req.params.id)
-    const result = await mongodb.getDb().db('Project2').collection('recipes').find({ _id: recipeId});
-    result.toArray().then((recipes) => {
+    const result = await mongodb.getDb().db('Recipes').collection('Recipes').find({ _id: recipeId});
+    result.toArray().then((Recipes) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(recipes[0]);
     });
@@ -48,7 +48,7 @@ repController.updateRecipe = async(req, res) => {
         averagePrice: req.body.averagePrice,
         steps: req.body.steps,
     }
-    const response = await mongodb.getDb.db().collection('recipes').replaceOne({_id: recipeId}, recipe)
+    const response = await mongodb.getDb.db('Recipes').collection('Recipes').replaceOne({_id: recipeId}, recipe)
     if (response.modifiedCount > 0) {
         res.status(204).send();
     } else {
@@ -57,7 +57,7 @@ repController.updateRecipe = async(req, res) => {
 }
 repController.deleteRecipe = async(req, res) => {
     const recipeId = new Object(req.params.id);
-    const response = await mongodb.getDb.db().collection('recipes').remove({_id: recipeId}, true);
+    const response = await mongodb.getDb.db('Recipes').collection('Recipes').remove({_id: recipeId}, true);
     if (response.deleteCount > 0) {
         res.status(204).send();
     } else {
